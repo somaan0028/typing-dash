@@ -1,0 +1,60 @@
+<% include ../partials/header.ejs %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <div class="dashboard-container">
+        <div class="dashboard-div">
+            <header class="dashboard-header">
+                <h1>Welcome <%= user.username %>!</h1>
+                <p>Track Your Progress here and Become a Typing Ninja!</p>
+                <a class="dashboard-test-btn" href="/test">Start Test</a>
+            </header>
+            <div class="chart-btns-pers-best-div">
+                <div class="chart-btns-div">
+                    <button class="chart-display-btns" id="past-week-button">Past Week</button>
+                    <button class="chart-display-btns" id="past-month-button">Past Month</button>
+                    <button class="chart-display-btns" id="all-time-button">All Time</button>
+                </div>
+                <p id="pers-best" >Personal Best: <strong><%= oldResults.persBest %> WPM</strong></p>
+            </div>
+
+            <canvas id="result-chart"></canvas>
+
+            <div class="old-test-results">
+                <h2>Your Latest Results</h2>
+                <% if(oldResults.scores.length === 0){ %>
+                    <p id="no-results-to-show">No results to show...Take a Typing Test Now!</p>
+                <% } else { %>
+                    <% for (i = oldResults.scores.length-1; i >= oldResults.scores.length - oldResults.numOfResultsToPrint; i--) { %>
+                        <div class="single-test-result">
+                            <p class="date-of-test"><%= oldResults.times[i] %></p>
+                            <p class="score-of-test"><%= oldResults.scores[i] %> wpm</p>
+                        </div>
+                        
+                    <% } %>
+                <% } %>
+                <a class="dashboard-test-btn" href="/test">Start Test</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var theScoresArray = [];
+        var theUnixTimeArray = [];
+
+        <% oldResults.scores.forEach(element => { %>
+            var toPush = <%= element %>
+            //console.log(toPush);
+            theScoresArray.push(toPush);
+        <% }); %>
+
+        <% oldResults.unixTimes.forEach(element => { %>
+            var toPush = <%= element*1000 %>
+            //console.log(toPush);
+            theUnixTimeArray.push(toPush);
+        <% }); %>
+
+    </script>
+
+    <script src="js/theChart.js"></script>
+<% include ../partials/footer.ejs %>

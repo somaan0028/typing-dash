@@ -1,0 +1,36 @@
+<% include ../partials/header.ejs %>
+
+        <div class="login-container">
+            <div class="login-area">
+                <h1>Log In</h1>
+                <hr>
+                <% if(errorMsg){ %>
+                    <p class="error-msg-auth"><%= errorMsg %></p>
+                <% } %>
+                <div class="forms-container">
+                    <div class="manual-login-register login-reg-section">
+                        <form action="/auth/locallogin" method="POST" class="login-register-form">
+                            <input type="email" name="email" placeholder="Email" class="login-register-input" required>
+                            <input type="password" name="password" placeholder="Password" class="login-register-input" required>
+                            <input type="submit" class="submit-form" value="Log In">
+                        </form>
+                        <p class="link-to-login-register">Don't have an account? <a href="/auth/register">Sign Up</a></p>
+                        <form action="/auth/demouser" method="POST">
+                            <input type="text" class="hidden-inputs" name="email" value="ros3PkBesnDRT7Q9JhYgYP0MFRCeUl">
+                            <input type="password" class="hidden-inputs" name="password" value="dummyvalueB">
+                            <input type="submit" value="Sign in as Demo User" class="demo-user-submit">
+                        </form>
+                    </div>
+                    <div class="oauth-login-register login-reg-section">
+                        <h3 class="oauth-heading">Or Sign In using:</h3>
+                        <div class="oauth-buttons">
+                            <a class="oauth-btn google-btn" href="/auth/google"> <img src="/images/google-logo-final.png" alt="Sign In with Google"> <p>Google</p></a>
+                            <a class="oauth-btn github-btn" href="/auth/github"> <img src="/images/github-logo-final.png" alt="Sign In with Github"> <p>Github</p></a>
+                            <a class="oauth-btn stackexchange-btn" href="/auth/stack-exchange"> <img src="/images/stackoverflow-logo-final.png" alt="Sign In with Stackoverflow"> <p>Stack Overflow</p></a>
+                            <a class="oauth-btn reddit-btn" href="/auth/reddit"> <img src="/images/reddit-logo-final.png" alt="Sign In with Reddit"> <p>Reddit</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<% include ../partials/footer.ejs %>

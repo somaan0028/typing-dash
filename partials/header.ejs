@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Typing Dash</title>
+    <link rel="stylesheet" href="css/headerFooter.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/tabimage.ico">
+
+
+
+    <script src="js/header.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="logo"><a href="/"><img src="/images/logo.png" alt="Logo"></a></li>
+           
+            <li class="item"><a href="/">Home</a></li>
+            
+            <% if (user) { %>
+                <li class="item"><a href="/dashboard">Dashboard</a></li>
+                <li class="item"><a href="/auth/logout">Log out</a></li>
+            <% } else { %>
+                <li class="item"><a href="/auth/login">Log In</a></li>
+                <li class="item"><a href="/auth/register">Sign Up</a></li>
+            <% } %>
+            
+
+            <li class="toggle"><span class="bars"></span></li>
+            <li class="toggle">
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </li>
+
+        </ul>
+    </nav>
+    <div class="ui-container">
+        <div class="inner-container">

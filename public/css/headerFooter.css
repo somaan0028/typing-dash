@@ -1,0 +1,286 @@
+/* This file holds the styles for the Nav Bar, the Containers and the Footer */
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 19px;
+    line-height: 1.5;
+}
+body {
+    font-family: sans-serif;
+}
+body::-webkit-scrollbar {
+  width: 0.6rem;
+}
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+body::-webkit-scrollbar-thumb {
+  background: #222835;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #ff0000;
+}
+nav {
+    background: white;
+    padding: 0px 10px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 0 10px #2d2d2d;
+}
+nav ul {
+    list-style-type: none;
+}
+
+nav .menu a {
+    color: #3c475f;
+    text-decoration: none;
+    transition: 0.3s all;
+}
+nav .menu a:hover {
+    color: #ff0000;
+}
+nav .menu .logo{
+    color: #6F76D9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+nav .menu .logo a:hover {
+    text-decoration: none;
+}
+nav .menu .logo a img{
+    width: 148px;
+    height: auto;
+    margin-top: 5px;
+}
+nav .menu li {
+
+    font-size: 16px;
+    padding: 10px 12px;
+    white-space: nowrap;
+}
+
+nav .logo a,
+nav .toggle a {
+    font-weight: bold;  
+    font-size: 22px;
+}
+
+
+.my-20{
+    margin-bottom: 20px;
+    margin-top:20px;
+}
+.text-muted{
+    color:  #8D95A6;
+}
+.title{
+    color:#123688;
+}
+.text-active{
+    color: #6F76D9;
+}
+
+.title{
+    color:#123688;
+}
+.subtitle{
+    font-size: 1.2em;
+    
+}
+
+  
+  /* Mobile menu */
+  .menu {
+    margin-left: auto;
+    margin-right: auto;
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toggle {
+    order: 1;
+  }
+  .item.button {
+    order: 2;
+  }
+  .item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+  }
+  .item.active {
+    display: block;
+  }
+  
+  /* Navbar Toggle */
+  .toggle {
+    cursor:pointer;
+  }
+  
+  .burger div {
+    width: 30px;
+    height: 3px;
+    background-color: #3c475f;
+    margin: 5px;
+    transition: all .3s ease;
+}
+.btn{
+    margin: 15px 0px;
+    padding: 10px 15px; 
+    display: inline-block; 
+    border-radius: 7px; 
+    font-size: .9em;
+}
+.btn-white{
+    border:2px solid #eee; 
+}
+
+
+
+/* convert burger icon to cross */
+.mark .line1{
+    transform: rotate(-45deg) translate(-5px,6px)
+}
+.mark .line2{
+    opacity: 0;
+}
+.mark .line3{
+    transform: rotate(45deg) translate(-5px,-6px)
+}
+
+/* Tablet menu */
+@media all and (min-width: 468px) {
+    nav {
+
+        background: white;
+        padding: 0px 40px;
+        font-family: 'Poppins', sans-serif;
+        box-shadow: 0 0 10px #2d2d2d;
+
+    }
+    .menu {
+        justify-content: center;
+    }
+
+    .logo {
+        flex: 1;
+    }
+    nav .menu .logo a img{
+        width: 200px;
+    }
+
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 2;
+    }
+}
+  
+/* Desktop menu */
+@media all and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .menu{
+        padding: 0;
+    }
+    .menu li {
+        padding: 15px 10px;
+        
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+    .title-div{
+        width: 67%
+    }
+    .flower-div{
+        width: 28.5%;
+    }
+    .card { grid-template-columns: repeat(2, 1fr); }
+
+}
+
+@media (min-width: 900px) {
+    .card { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media all and (max-width: 768px){
+    article{
+        margin-top: 90px;
+    }
+}
+
+
+/* ======================================= */
+/*                CONTAINER                */
+/* ======================================= */
+
+.ui-container{
+    width: 100%;
+}
+.ui-container .inner-container{
+    width: 100%;
+    margin: 0 auto;
+    /* padding: 30px 15px; */
+    /* max-width: 1120px; */
+    min-height: 85vh;
+}
+
+
+
+/* ======================================= */
+/*                FOOTER                   */
+/* ======================================= */
+
+.my-footer{
+    width: 100%;
+    min-height: 75px;
+    background-color: #131313;
+    color: white;
+    display: flex;
+    align-items: center;
+    border-top: 2px solid white;
+}
+.my-footer .credits{
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.my-footer .credits p{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+.my-footer .credits .project-name{
+    /* margin-bottom: 5px;
+    padding-bottom: 6px; */
+}
+.my-footer .credits p a{
+    color: white;
+    text-decoration: none;
+}
+

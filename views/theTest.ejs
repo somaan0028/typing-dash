@@ -1,0 +1,65 @@
+<% include ../partials/header.ejs %>
+    <div class="test-div-container">
+        <div class="testdiv">
+            <div class="code-container">
+                <div id="code-div"></div>
+                <textarea id="code-box" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="loading-div right-side-div">
+                <div class="loader"></div>
+
+                <% if (user) { %>
+                    <p class="right-div-btns-p" ><a href="/dashboard">Dashboard</a> for old Results</p>
+                <% } else { %>
+                    <p class="right-div-btns-p" ><a href="/auth/login">Sign In</a> to track your Progress</p>
+                <% } %>
+                <p class="right-div-btns-p" ><a href="/test">Restart</a> to Retake the Test</p>
+            </div>
+
+            <div class="time-div right-side-div">
+                <p id="timeleft"></p>
+                <p id="seconds-left-text">Seconds Left</p>
+
+                <% if (user) { %>
+                    <p class="right-div-btns-p" ><a href="/dashboard">Dashboard</a> for old Results</p>
+                <% } else { %>
+                    <p class="right-div-btns-p" ><a href="/auth/login">Sign In</a> to track your Progress</p>
+                <% } %>
+                <p class="right-div-btns-p" ><a href="/test">Restart</a> to Retake the Test</p>
+            </div>
+
+            <div class="div-result right-side-div">
+                <p id="net-speed-box"></p>
+                <div id="record-broken-div">
+                    <p>New Personal Record!</p>
+                </div>
+                <% if (user) { %>
+                    <p class="right-div-btns-p" ><a href="/dashboard">Dashboard</a> for old Results</p>
+                <% } else { %>
+                    <p class="right-div-btns-p" ><a href="/auth/login">Sign In</a> to track your Progress</p>
+                <% } %>
+                <p class="right-div-btns-p" ><a href="/test">Restart</a> to Retake the Test</p>
+            </div>
+
+            
+            
+        </div>
+    </div>
+
+    <script>
+        //checking if user logged in or not and then setting the variable "loggedIn" according to it which will be later used in the script.js file
+        <% if (user) { %>
+            //console.log("User Logged In!")
+            var loggedIn = true;
+        <% } else { %>
+            //console.log("Not logged in....")
+            var loggedIn = false;
+        <% } %>
+        
+    </script>
+    <script src="js/script.js"></script>
+
+<% include ../partials/footer.ejs %>
+
+

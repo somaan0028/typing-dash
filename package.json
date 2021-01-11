@@ -1,0 +1,25 @@
+{
+  "name": "typing-dash",
+  "version": "1.0.0",
+  "description": "A project that lets you take Typing tests and track progress",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-flash": "^0.1.1",
+    "cookie-session": "^1.3.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.1",
+    "mongoose": "^5.10.2",
+    "passport": "^0.4.1",
+    "passport-github2": "^0.1.12",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "passport-reddit": "^0.2.4",
+    "passport-stack-exchange": "^1.0.0",
+    "passport-yahoo-oauth": "^0.2.0",
+    "passport-yahoo-oauth2": "^0.2.6"
+  }
+}
