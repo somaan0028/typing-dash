@@ -27,9 +27,7 @@ router.get('/', authCheck, (req, res) => {
             numOfResultsToPrint: numOfResultsToPrint,
             persBest: theUser.personalBest,
         };
-        //console.log("below is the object of scores and time");
-        //console.log(previousResults);
-        //console.log(theUser.timeOftest)
+
         res.render('dashboard', { user: req.user, oldResults: previousResults });
     })
     .catch(err => console.log(err));

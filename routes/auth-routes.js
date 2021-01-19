@@ -8,7 +8,6 @@ var flash = require('connect-flash');
 router.get('/login', (req, res) => {
     // req.flash().error is the msg that exists when wrong email or password is entered.
     // Stores whatever is in the flash msg in the variable errorMsg
-    // console.log(req.flash().error[0]);
     var errorMsg = req.flash();
 
     // if errorMsg is not an empty object, get the msg and store in the errorMsg variable itself

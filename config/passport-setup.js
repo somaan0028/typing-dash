@@ -81,8 +81,6 @@ passport.use(new GitHubStrategy({
     callbackURL: "/auth/github/redirect"
   }, (accessToken, refreshToken, profile, done) => {
 
-    //console.log("Got the date from Github!!");
-    //console.log(profile);
 
     User.findOne({githubId: profile.id}).then((currentUser) => {
         if(currentUser){
@@ -121,9 +119,6 @@ passport.use(new StackExchangeStrategy({
   },(accessToken, refreshToken, profile, done) => {
 
 
-    //console.log("Got the Profile!!");
-    //console.log(profile);
-
     User.findOne({stackexchangeId: profile.id}).then((currentUser) => {
         if(currentUser){
             // if already have this user
@@ -160,8 +155,6 @@ passport.use(new RedditStrategy({
     callbackURL: "/auth/reddit/redirect"
   }, (accessToken, refreshToken, profile, done) => {
 
-    //console.log("Got the data from Reddit!!");
-    //console.log(profile);
 
     User.findOne({redditId: profile.id}).then((currentUser) => {
         if(currentUser){
@@ -186,7 +179,7 @@ passport.use(new RedditStrategy({
   }
 ));
 
-//  use 5fd46ee155500d3f08086a6e for demo id
+//  using 5fd46ee155500d3f08086a6e for demo id
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
@@ -225,15 +218,7 @@ passport.use(new LocalStrategy({
                     }
                 });
                 console.log("Below brypt compare");
-                // // password matched
-                // if (currentUser.password == password) {
-                //     console.log("This is the correct User!!!");
-                //     done(null, currentUser);
-                // }else{
-                //     // If password does not match
-                //     console.log("Incorrect Password");
-                //     return done(null, false, {message: "*Incorrect Password"})
-                // }
+
             }).catch((err) => {
                 // Wrong email entered as no user with that email found
                 return done(null, false, {message: "*There is no account with this Email."})

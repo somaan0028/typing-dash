@@ -1,10 +1,11 @@
 {
+  
   "name": "typing-dash",
   "version": "1.0.0",
-  "description": "A project that lets you take Typing tests and track progress",
-  "main": "app.js",
+  "description": "A project that lets you take Typing tests and tracks your progress",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -21,5 +22,17 @@
     "passport-stack-exchange": "^1.0.0",
     "passport-yahoo-oauth": "^0.2.0",
     "passport-yahoo-oauth2": "^0.2.6"
-  }
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://github.com/somaan0028/typing-dash"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
 }

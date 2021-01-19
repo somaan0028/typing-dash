@@ -63,10 +63,6 @@ app.get('/test', (req, res) => {
 
 
 app.post('/savedata', (req, res)=>{
-    //console.log("inside server");
-    //console.log(req.body);
-
-    //console.log(req.body.result.net_words_per_min);
 
     //save to db
     User.findOne({_id: req.user._id}).then((queriedUser)=>{

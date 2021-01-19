@@ -25,9 +25,6 @@ function createChart(labelsArray, dataArray, unitOfTime){
         scatterChart = new Chart(result_chart, {
         type: 'line',
         data: {
-            //labels: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'],
-            //labels: ["9-Sep-2020 11:16:41","9-Sep-2020 11:16:52","9-Sep-2020 11:16:59"],
-            // labels: [1599632201111, 1599632269111, 1599636564111],
             labels: labelsArray,
             datasets: [{
                 label: 'Speed (WPM)',
@@ -81,8 +78,6 @@ function filterArray(numOfDays){
         }
         
     }
-    //console.log(filteredArrayOfScores);
-    //console.log(filteredArrayOfTimes);
 
     theLabels = filteredArrayOfTimes;
     theData = filteredArrayOfScores;
@@ -90,7 +85,6 @@ function filterArray(numOfDays){
 
 
 past_week_button.addEventListener('click', ()=>{
-    //console.log('week');
 
     past_month_button.classList.remove("chart-btn-pressed");
     all_time_button.classList.remove("chart-btn-pressed");
@@ -114,7 +108,6 @@ past_month_button.addEventListener('click', ()=>{
 });
 
 all_time_button.addEventListener('click', ()=>{
-    //console.log('all time');
 
     past_week_button.classList.remove("chart-btn-pressed");
     past_month_button.classList.remove("chart-btn-pressed");
@@ -124,10 +117,8 @@ all_time_button.addEventListener('click', ()=>{
     theData = theScoresArray;
     rangeOfTime = (theUnixTimeArray[theUnixTimeArray.length - 1] - theUnixTimeArray[0]);
     if ( rangeOfTime <= 10368000000) {  //num of milliseconds in 4 months
-        //console.log("its extends over 4 months");
         unitforTime = 'day';
     }else{
-        //console.log("its more than 4 months");
         unitforTime = 'month';
     }
     scatterChart.destroy(); //destroy previous chart
